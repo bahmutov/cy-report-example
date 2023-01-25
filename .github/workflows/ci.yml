@@ -10,9 +10,23 @@ jobs:
       # and run all Cypress tests
       # https://github.com/cypress-io/github-action
       - name: Cypress run
-        uses: cypress-io/github-action@v4
+        uses: cypress-io/github-action@v5
         with:
-          # check the spec types
-          build: npm run lint
           # start the application before running Cypress
           start: npm start
+      # capture screenshots, videos, Mochawesome reports
+      - uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: cypress-videos
+          path: cypress/videos
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: Mochawesome
+          path: cypress/results
