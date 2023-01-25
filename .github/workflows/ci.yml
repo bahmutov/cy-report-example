@@ -4,16 +4,12 @@ jobs:
   tests:
     runs-on: ubuntu-20.04
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
-      # https://github.com/cypress-io/github-action
-      - name: Cypress run
-        uses: cypress-io/github-action@v5
-        with:
-          # start the application before running Cypress
-          start: npm start
+      # https://github.com/bahmutov/cypress-workflows
+      uses: bahmutov/cypress-workflows/.github/workflows/split.yml@v1
+      with:
+        n: 3
+        start: npm start
+
       # capture screenshots, videos, Mochawesome reports
       - uses: actions/upload-artifact@v3
         if: failure()

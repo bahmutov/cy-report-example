@@ -1,4 +1,7 @@
 import { defineConfig } from 'cypress'
+// https://github.com/bahmutov/cypress-split
+// @ts-ignore
+import cypressSplit from 'cypress-split'
 
 export default defineConfig({
   reporter: 'mochawesome',
@@ -12,5 +15,10 @@ export default defineConfig({
   e2e: {
     baseUrl: 'http://localhost:3000',
     supportFile: false,
+    setupNodeEvents(on, config) {
+      cypressSplit(on, config)
+      // IMPORTANT: return the config object
+      return config
+    },
   },
 })
