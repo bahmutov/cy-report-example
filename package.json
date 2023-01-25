@@ -1,7 +1,7 @@
 {
   "name": "cy-report-example",
   "version": "1.0.0",
-  "description": "",
+  "description": "Mochawesome report for Cypress example",
   "scripts": {
     "test": "cypress run",
     "start": "npm start --prefix todomvc",
