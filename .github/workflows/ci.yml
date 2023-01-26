@@ -1,8 +1,13 @@
 name: ci
 on: [push]
 jobs:
-  tests:
+  single:
     # https://github.com/bahmutov/cypress-workflows
+    uses: bahmutov/cypress-workflows/.github/workflows/standard.yml@v1
+    with:
+      start: npm start
+
+  tests:
     uses: bahmutov/cypress-workflows/.github/workflows/split.yml@v1
     with:
       n: 3
