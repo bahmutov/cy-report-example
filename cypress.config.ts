@@ -1,7 +1,7 @@
 import { defineConfig } from 'cypress'
 // https://github.com/bahmutov/cypress-split
 // @ts-ignore
-import cypressSplit from 'cypress-split'
+const cypressSplit = require('cypress-split')
 
 export default defineConfig({
   reporter: 'mochawesome',
