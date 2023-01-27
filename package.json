@@ -11,7 +11,10 @@
     "lint": "tsc --noEmit --pretty",
     "ci": "start-test 3000 cy:run",
     "cy:run": "cypress run",
-    "postinstall": "npm install --prefix todomvc"
+    "postinstall": "npm install --prefix todomvc",
+    "report:merge": "mochawesome-merge cypress/results/*.json -o cypress/report.json",
+    "report:generate": "marge cypress/report.json --charts true",
+    "one:report": "cypress run --spec cypress/e2e/viewports.cy.ts"
   },
   "keywords": [
     "cypress-example"
@@ -22,6 +25,7 @@
   "devDependencies": {
     "cy-spok": "^1.5.2",
     "cypress": "12.4.0",
+    "cypress-mochawesome-reporter": "^3.2.3",
     "cypress-split": "^1.1.4",
     "mochawesome": "^7.1.3",
     "mochawesome-merge": "^4.2.2",
