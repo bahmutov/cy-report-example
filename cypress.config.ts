@@ -4,17 +4,7 @@ import { defineConfig } from 'cypress'
 const cypressSplit = require('cypress-split')
 
 export default defineConfig({
-  // https://github.com/adamgruber/mochawesome
-  // reporter: 'mochawesome',
-  // reporterOptions: {
-  //   useInlineDiffs: true,
-  //   embeddedScreenshots: true,
-  //   reportDir: 'cypress/results',
-  //   reportFilename: '[name].html',
-  //   overwrite: true,
-  //   html: true,
-  //   json: true,
-  // },
+  // https://github.com/LironEr/cypress-mochawesome-reporter
   reporter: 'cypress-mochawesome-reporter',
   reporterOptions: {
     reportDir: 'cypress/reports',

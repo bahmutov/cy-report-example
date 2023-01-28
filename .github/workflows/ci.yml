@@ -3,12 +3,12 @@ on: [push]
 jobs:
   single:
     # https://github.com/bahmutov/cypress-workflows
-    uses: bahmutov/cypress-workflows/.github/workflows/standard.yml@v1
+    uses: bahmutov/cypress-workflows/.github/workflows/standard.yml@v1.8.0
     with:
       start: npm start
 
-  tests:
-    uses: bahmutov/cypress-workflows/.github/workflows/split.yml@v1
+  split:
+    uses: bahmutov/cypress-workflows/.github/workflows/split.yml@v1.8.0
     with:
       n: 3
       start: npm start
