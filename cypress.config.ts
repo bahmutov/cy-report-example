@@ -7,7 +7,7 @@ export default defineConfig({
   // https://github.com/LironEr/cypress-mochawesome-reporter
   reporter: 'cypress-mochawesome-reporter',
   reporterOptions: {
-    reportDir: 'cypress/reports',
+    reportDir: 'cypress/results',
     charts: true,
     embeddedScreenshots: true,
     inlineAssets: false,
