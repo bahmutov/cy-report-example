@@ -25,13 +25,10 @@
   "devDependencies": {
     "cy-spok": "^1.5.2",
     "cypress": "12.4.0",
-    "cypress-mochawesome-reporter": "^3.2.3",
     "cypress-split": "^1.1.4",
     "prettier": "2.8.3",
     "start-server-and-test": "1.14.0",
-    "typescript": "4.8.3"
-  },
-  "others": {
+    "typescript": "4.8.3",
     "mochawesome": "^7.1.3",
     "mochawesome-merge": "^4.2.2",
     "mochawesome-report-generator": "^6.2.0"

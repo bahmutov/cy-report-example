@@ -4,22 +4,20 @@ import { defineConfig } from 'cypress'
 const cypressSplit = require('cypress-split')
 
 export default defineConfig({
-  // https://github.com/LironEr/cypress-mochawesome-reporter
-  reporter: 'cypress-mochawesome-reporter',
+  // https://github.com/adamgruber/mochawesome
+  reporter: 'mochawesome',
   reporterOptions: {
-    reportDir: 'cypress/results',
-    charts: true,
+    useInlineDiffs: true,
     embeddedScreenshots: true,
-    inlineAssets: false,
-    saveAllAttempts: true,
+    reportDir: 'cypress/results',
+    reportFilename: '[name].html',
     overwrite: true,
+    html: true,
+    json: true,
   },
   e2e: {
     baseUrl: 'http://localhost:3000',
-    retries: 1,
     setupNodeEvents(on, config) {
-      // @ts-ignore
-      require('cypress-mochawesome-reporter/plugin')(on)
       cypressSplit(on, config)
       // IMPORTANT: return the config object
       return config
