@@ -8,9 +8,8 @@ jobs:
       start: npm start
 
   split:
-    uses: bahmutov/cypress-workflows/.github/workflows/split.yml@v1.9.0
+    uses: bahmutov/cypress-workflows/.github/workflows/split.yml@v1.9.1
     with:
       n: 3
       start: npm start
-      store-artifacts: true
       marge: true
