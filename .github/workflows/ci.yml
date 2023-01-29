@@ -2,13 +2,15 @@ name: ci
 on: [push]
 jobs:
   single:
-    # https://github.com/bahmutov/cypress-workflows
+    # disable this job for now, only use the split workflow
+    if: ${{ false }}
     uses: bahmutov/cypress-workflows/.github/workflows/standard.yml@v1.8.0
     with:
       start: npm start
 
   split:
-    uses: bahmutov/cypress-workflows/.github/workflows/split.yml@v1.9.3
+    # https://github.com/bahmutov/cypress-workflows
+    uses: bahmutov/cypress-workflows/.github/workflows/split.yml@v1.9.4
     with:
       n: 3
       start: npm start
