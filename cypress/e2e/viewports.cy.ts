@@ -50,7 +50,7 @@ describe(
       cy.contains('.todo-count', '2')
       cy.intercept('DELETE', '/todos/*').as('delete')
       cy.contains('button', 'Clear completed').click()
-      cy.addTestContext('Failing on purpose')
+      // cy.addTestContext('Failing on purpose')
       // make the test fail on purpose
       cy.get('li.todo').should('have.length', 5)
       cy.wait('@delete')

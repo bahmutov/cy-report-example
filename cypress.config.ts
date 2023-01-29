@@ -22,6 +22,7 @@ export default defineConfig({
       //   console.log(results)
       // })
       cypressSplit(on, config)
+
       // IMPORTANT: return the config object
       return config
     },
