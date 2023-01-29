@@ -18,6 +18,9 @@ export default defineConfig({
   e2e: {
     baseUrl: 'http://localhost:3000',
     setupNodeEvents(on, config) {
+      // on('after:spec', results => {
+      //   console.log(results)
+      // })
       cypressSplit(on, config)
       // IMPORTANT: return the config object
       return config
