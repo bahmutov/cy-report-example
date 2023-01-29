@@ -12,4 +12,5 @@ jobs:
     with:
       n: 3
       start: npm start
+      store-artifacts: true
       marge: true
