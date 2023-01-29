@@ -8,7 +8,7 @@ jobs:
       start: npm start
 
   split:
-    uses: bahmutov/cypress-workflows/.github/workflows/split.yml@v1.9.2
+    uses: bahmutov/cypress-workflows/.github/workflows/split.yml@v1.9.3
     with:
       n: 3
       start: npm start
