@@ -2,7 +2,7 @@
 
 > Mochawesome report for Cypress example
 
-Read [Cypress Mochawesome HTML Reports](https://glebbahmutov.com/blog/cypress-mochawesome/)
+Read [Cypress Mochawesome HTML Reports](https://glebbahmutov.com/blog/cypress-mochawesome/) and [The Battle of Cypress Mochawesome Reporters](https://glebbahmutov.com/blog/the-awesome-battle/).
 
 ## Branches
 
