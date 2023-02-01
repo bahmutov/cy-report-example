@@ -1,30 +1,30 @@
 import { defineConfig } from 'cypress'
-// https://github.com/bahmutov/cypress-split
-// @ts-ignore
-const cypressSplit = require('cypress-split')
+import { unlinkSync } from 'fs'
 
 export default defineConfig({
-  // https://github.com/adamgruber/mochawesome
-  reporter: 'mochawesome',
-  reporterOptions: {
-    useInlineDiffs: true,
-    embeddedScreenshots: true,
-    reportDir: 'cypress/results',
-    reportFilename: '[name].html',
-    overwrite: true,
-    html: true,
-    json: true,
-  },
   e2e: {
     baseUrl: 'http://localhost:3000',
+    supportFile: false,
     setupNodeEvents(on, config) {
-      // on('after:spec', results => {
-      //   console.log(results)
-      // })
-      cypressSplit(on, config)
-
-      // IMPORTANT: return the config object
-      return config
+      if (config.video) {
+        on('after:spec', (spec, results) => {
+          if (results.video) {
+            // https://glebbahmutov.com/blog/cypress-test-statuses/
+            if (
+              results.stats.failures ||
+              results.stats.skipped
+            ) {
+              console.log(
+                'keeping the video %s',
+                results.video,
+              )
+            } else {
+              console.log('deleting video for passing spec')
+              unlinkSync(results.video)
+            }
+          }
+        })
+      }
     },
   },
 })
