@@ -11,7 +11,8 @@ export default defineConfig({
     reportFilename: '[name].html',
     overwrite: true,
     html: true,
-    json: false,
+    // need JSON reports to merge them later
+    json: true,
   },
   e2e: {
     baseUrl: 'http://localhost:3000',
