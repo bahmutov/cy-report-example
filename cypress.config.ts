@@ -7,6 +7,8 @@ export default defineConfig({
   // https://github.com/adamgruber/mochawesome
   reporter: 'mochawesome',
   reporterOptions: {
+    useInlineDiffs: true,
+    embeddedScreenshots: true,
     reportDir: 'cypress/results',
     reportFilename: '[name].html',
     overwrite: true,

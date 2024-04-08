@@ -22,7 +22,7 @@
   "devDependencies": {
     "cy-spok": "^1.5.2",
     "cypress": "12.4.0",
-    "cypress-split": "^1.1.4",
+    "cypress-split": "^1.21.2",
     "mochawesome": "^7.1.3",
     "mochawesome-merge": "^4.2.2",
     "mochawesome-report-generator": "^6.2.0",
