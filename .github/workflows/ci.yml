@@ -10,5 +10,5 @@ jobs:
   tests:
     uses: bahmutov/cypress-workflows/.github/workflows/split.yml@v2
     with:
-      n: 3
+      nE2E: 3
       start: npm start
